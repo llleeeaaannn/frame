@@ -55,7 +55,6 @@ table {
 /* General Styling */
 * {
 	box-sizing: border-box;
-  font-family: 'GT Ultra Standard', sans-serif;
 	color: var(--yellow1)
 }
 
@@ -69,5 +68,100 @@ body {
 
 /* Main Styling */
 #main-container {
+	width: 100%;
 	background-color: var(--cream);
+}
+
+/* Header Styling */
+header {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	width: 100%;
+	height: 20vh;
+	border: 1px solid red;
+}
+
+header div {
+	height: 100%;
+	border: 1px solid black;
+}
+
+header .social-icon-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+header .menu-icon-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+header .title {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+header .title h1 {
+	font-size: 3rem;
+	font-family: 'BattleLines', sans-serif;
+}
+
+/* Images Styling */
+#top-image-container {
+	width: 100%;
+	height: vh;
+}
+
+#top-image-container img {
+	width: 100%;
+	height: auto;
+}
+
+/* Booking Styling */
+#booking-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100vh;
+	width: 100%;
+}
+
+.booking-left,
+.booking-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 3rem;
+}
+
+.booking-left iframe,
+.booking-right iframe {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+}
+
+.booking-left {
+	background-color: var(--black);
+}
+
+.booking-left h3 {
+	color: var(--cream);
+}
+
+.booking-right {
+	background-color: var(--cream);
+}
+
+.booking-right h3 {
+	color: var(--black);
 }
