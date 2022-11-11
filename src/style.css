@@ -79,32 +79,32 @@ body {
 }
 
 /* Header Styling */
-header {
+#header-container {
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
 	width: 100%;
 	height: 20vh;
 }
 
-header div {
+#header-container > div {
 	height: 100%;
 }
 
-header .menu-icon-container {
+#header-container .menu-icon-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
 }
 
-header .title {
+#header-container .title {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
 
-header .title h1 {
+#header-container .title h1 {
 	color: var(--brown);
 	font-size: 5rem;
 	font-family: 'BattleLines', sans-serif;
@@ -750,36 +750,63 @@ footer span {
 }
 
 .inner-menu {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	width: 80vw;
-	height: 70vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 70vw;
 	border: 1px solid red;
 }
 
-.menu-title {
-
-}
-
-.menu-title h2 {
-	font-size: 3rem;
-	color: var(--cream);
-	font-family: 'BattleLines', sans-serif;
-}
-
-.menu-nav {
+.menu-one,
+.menu-two,
+.menu-three {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 	justify-content: flex-start;
+	align-items: flex-start;
+	margin-left: 3rem;
 }
 
-.menu-nav span {
-	font-size: 1.25rem;
+.menu-one h3,
+.menu-two h3,
+.menu-three h3 {
 	color: var(--cream);
-	text-transform: uppercase;
+	font-size: 1rem;
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 2rem;
+}
+
+.menu-one div,
+.menu-two div,
+.menu-three div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.menu-one div span,
+.menu-two div span,
+.menu-three div span {
+	color: var(--cream);
+	font-size: 2rem;
+	font-family: 'Grotesk', sans-serif;
+}
+
+.menu-two div {
+	margin-bottom: 3rem;
+}
+
+.menu-two div h4 {
+	color: var(--cream);
+	font-size: 2rem;
+	font-family: 'BattleLines', sans-serif;
+	margin-bottom: 0.25rem;
+}
+
+.menu-two div span {
+	color: var(--cream);
+	font-size: 1rem;
+	line-height: 1.25rem;
 	font-family: 'Grotesk', sans-serif;
 }
 
