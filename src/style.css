@@ -50,7 +50,13 @@ table {
   --cream: rgba(256, 236, 220, 1);
 	--orange: rgba(200, 52, 4, 1);
 	--black: rgba(0, 0, 0, 1);
-}
+	--brown: rgba(40, 36, 36, 1);
+	--cantaloupe: rgba(256, 196, 164, 1);
+	--apricot: rgba(256, 172, 132, 1);
+	--peach: rgba(256, 220, 204, 1);
+	--light-peach: rgba(256, 232, 216, 1);
+	--honey: rgba(256, 120, 132, 1);
+	--tangerine: rgba(237, 112, 20, 1);}
 
 /* General Styling */
 * {
@@ -78,12 +84,10 @@ header {
 	grid-template-columns: 1fr 3fr 1fr;
 	width: 100%;
 	height: 20vh;
-	border: 1px solid red;
 }
 
 header div {
 	height: 100%;
-	border: 1px solid black;
 }
 
 header .social-icon-container {
@@ -108,14 +112,14 @@ header .title {
 }
 
 header .title h1 {
-	font-size: 3rem;
+	font-size: 5rem;
 	font-family: 'BattleLines', sans-serif;
 }
 
 /* Images Styling */
 #top-image-container {
 	width: 100%;
-	height: vh;
+	height: 80vh;
 }
 
 #top-image-container img {
@@ -127,7 +131,6 @@ header .title h1 {
 #booking-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: 100vh;
 	width: 100%;
 }
 
@@ -138,7 +141,14 @@ header .title h1 {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding: 3rem;
+	padding: 5rem 0rem;
+}
+
+.booking-left h3,
+.booking-right h3 {
+	font-size: 2rem;
+	font-family: 'BattleLines', sans-serif;
+	margin-bottom: 2rem;
 }
 
 .booking-left iframe,
@@ -147,7 +157,8 @@ header .title h1 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
+	width: 285px;
+	height: 425px;
 }
 
 .booking-left {
@@ -164,4 +175,392 @@ header .title h1 {
 
 .booking-right h3 {
 	color: var(--black);
+}
+
+/* Group Booking Styling */
+#group-booking-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 3rem 0rem;
+	background-color: var(--brown);
+}
+
+.group-booking-header {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.group-booking-header h3 {
+	color: var(--cream);
+	font-size: 2rem;
+	font-family: 'BattleLines', sans-serif;
+}
+
+.group-booking-main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+}
+
+.group-booking-main > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.group-booking-main iframe {
+	width: 285px;
+	height: 425px;
+}
+
+.group-booking-button {
+	color: var(--brown);
+	font-size: 0.9rem;
+	font-family: 'Grotesk', sans-serif;
+	padding: 0.75rem 1rem;
+	background-color: var(--cream);
+	cursor: pointer;
+}
+
+.group-booking-button:hover {
+	color: var(--orange);
+	padding: 0.75rem 1rem;
+	background-color: var(--cream);
+}
+
+.group-booking-description {
+	font-size: 1rem;
+	font-family: 'Grotesk', sans-serif;
+	word-spacing: 0.2rem;
+	line-height: 1.25rem;
+	color: var(--cream);
+	text-align: center;
+	max-width: 325px;
+	margin: 1.5rem 0rem;
+}
+
+/* Our Supplies Container */
+#suppliers-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	background-color: var(--cream);
+}
+
+.suppliers-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem;
+}
+
+.suppliers-title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--black);
+	font-size: 5rem;
+	font-family: 'BattleLines', sans-serif;
+}
+
+.suppliers-description {
+	color: var(--black);
+	font-size: 1rem;
+	word-spacing: 0.2rem;
+	line-height: 1.25rem;
+	text-align: center;
+	font-family: 'Grotesk', sans-serif;
+	width: 50%;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+}
+
+.suppliers-button {
+	color: var(--black);
+	font-size: 1.25rem;
+	font-family: 'Grotesk', sans-serif;
+	padding: 1rem 3rem;
+	border: 0.25rem solid var(--black);
+	cursor: pointer;
+}
+
+.suppliers-button:hover {
+	color: var(--cream);
+	background-color: var(--orange);
+	border: 0.25rem solid var(--orange);
+	transition: all 0.25s ease-in-out;
+}
+
+.suppliers-image img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Gallery Styling */
+#gallery-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 5rem;
+	width: 100%;
+	padding: 4rem;
+	background-color: var(--black);
+}
+
+#gallery-container > div img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Quote Styling */
+#quote-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 5rem;
+	padding-top: 1rem;
+	background-color: var(--black);
+}
+
+.quote-title {
+	font-size: 2.2rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+}
+
+.quote-description {
+	font-size: 1.1rem;
+	color: var(--cream);
+	word-spacing: 0.2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-family: 'Grotesk', sans-serif;
+	width: 60%;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
+.quote-name {
+	font-size: 2.2rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+}
+
+/* Instagram Styling */
+#instagram-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--cream);
+	width: 100%;
+	height: 50vh;
+	padding: 2rem 3rem;
+}
+
+.instagram-username {
+	font-size: 2rem;
+	color: var(--black);
+	font-family: 'BattleLines', sans-serif;
+}
+
+/* Gift Card Container */
+#gift-card-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--cream);
+	width: 100%;
+	padding: 2rem 3rem;
+}
+
+#gift-card-container h3 {
+	font-size: 2rem;
+	color: var(--black);
+	font-family: 'BattleLines', sans-serif;
+}
+
+#gift-card-container span {
+	font-size: 1rem;
+	color: var(--black);
+	font-family: 'Grotesk', sans-serif;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+#gift-card-container iframe {
+	width: 350px;
+	height: 600px;
+}
+
+/* Hiring Container */
+#hiring-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0rem 3rem;
+	background-color: var(--cantaloupe)
+}
+
+#hiring-container h2 {
+	color: var(--apricot);
+	font-size: 7rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	margin-top: 12rem;
+	margin-bottom: 6rem;
+}
+
+#hiring-container span {
+	color: var(--brown);
+	font-size: 1rem;
+	font-family: 'Grotesk', sans-serif;
+	padding: 1rem 4rem;
+	margin-bottom: 10rem;
+	border: 0.1rem solid var(--brown);
+	background-color: var(--cream);
+	cursor: pointer;
+}
+
+#hiring-container span:hover {
+	color: var(--cream);
+	border: 0.1rem solid var(--brown);
+	background-color: var(--brown);
+	transition: all 0.25s ease-in-out;
+}
+
+/* FAQ Styling */
+#faq-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.faq-title {
+	margin-top: 3rem;
+}
+
+.faq-title h2 {
+	font-size: 5rem;
+	color: var(--brown);
+	font-weight: 700;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+	font-family: 'QuanTu', sans-serif;
+}
+
+.faq-options {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 65vw;
+	margin: 1.5rem 0rem;
+}
+
+.faq-options span {
+	font-size: 1.1rem;
+	color: var(--brown);
+	font-family: 'Grotesk', sans-serif;
+	margin-right: 1.5rem;
+	cursor: pointer;
+}
+
+.faq-options .active {
+	color: var(--apricot);
+}
+
+.faq-dietary-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 65vw;
+}
+
+.faq-outer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+}
+
+.faq-outer.active{
+	margin-bottom: 0rem;
+}
+
+.faq-inner {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	width: 100%;
+	height: 6rem;
+	cursor: pointer;
+}
+
+
+.faq-number {
+	display: grid;
+	place-items: center;
+	background-color: var(--peach);
+}
+
+.faq-number span {
+	font-size: 3rem;
+	color: var(--brown);
+	font-family: 'Grotesk', sans-serif;
+}
+
+.faq-inner:hover .faq-number {
+	background-color: var(--apricot);
+}
+
+.faq-question {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 2rem;
+	background-color: var(--light-peach);
+}
+
+.faq-question span {
+	font-size: 1.5rem;
+	color: var(--brown);
+	font-family: 'Grotesk', sans-serif;
+}
+
+.faq-descriptionn {
+	display: block;
+	padding: 2rem 3rem;
+}
+
+.faq-descriptionn span {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: var(--brown);
+	font-family: 'Grotesk', sans-serif;
+}
+
+.faq-description {
+	display: none;
+}
+
+.hide {
+	display: none;
 }

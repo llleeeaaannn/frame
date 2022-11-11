@@ -7,6 +7,24 @@
   font-display: swap;
 }
 
+/* Grotesk */
+@font-face {
+  font-family: 'Grotesk';
+  src: url('./fonts/AlteHaasGrotesk_Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* QuanTu (for FAQ) */
+@font-face {
+  font-family: 'QuanTu';
+  src: url('./fonts/VI-QuanTu.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* GT ULTRA FONT */
 /* Ultra */
 @font-face {
