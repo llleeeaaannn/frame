@@ -55,8 +55,7 @@ table {
 	--apricot: rgba(256, 172, 132, 1);
 	--peach: rgba(256, 220, 204, 1);
 	--light-peach: rgba(256, 232, 216, 1);
-	--honey: rgba(256, 120, 132, 1);
-	--tangerine: rgba(237, 112, 20, 1);}
+}
 
 /* General Styling */
 * {
@@ -76,6 +75,7 @@ body {
 #main-container {
 	width: 100%;
 	background-color: var(--cream);
+	margin-bottom: 6.5rem; /* Margin for footer */
 }
 
 /* Header Styling */
@@ -88,13 +88,6 @@ header {
 
 header div {
 	height: 100%;
-}
-
-header .social-icon-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
 }
 
 header .menu-icon-container {
@@ -112,8 +105,77 @@ header .title {
 }
 
 header .title h1 {
+	color: var(--brown);
 	font-size: 5rem;
 	font-family: 'BattleLines', sans-serif;
+}
+
+/* Social Icons Styling */
+.social-icon-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.social-icons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	height: 2rem;
+	margin-left: 3rem;
+}
+
+.social-icons svg {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.75rem;
+	fill: var(--brown);
+	cursor: pointer;
+}
+
+/* Menu Icon Styling */
+#menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.9rem;
+  width: 1.9rem;
+	margin-right: 3rem;
+	cursor: pointer;
+	z-index: 3;
+}
+
+#menu-toggle .menu-bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--brown);
+  transition: all 500ms ease-in-out;
+}
+
+#menu-toggle .menu-selected {
+  transition: all 500ms ease-in-out;
+  background-color: var(--cream);
+  transform-origin: top left;
+}
+
+#menu-toggle .menu-selected:nth-of-type(1) {
+  transition: all 500ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 2.45rem;
+}
+
+#menu-toggle .menu-selected:nth-of-type(2) {
+  transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+#menu-toggle .menu-selected:nth-of-type(3) {
+  transition: all 500ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 2.45rem;
 }
 
 /* Images Styling */
@@ -141,7 +203,7 @@ header .title h1 {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding: 5rem 0rem;
+	padding: 4rem 0rem;
 }
 
 .booking-left h3,
@@ -184,7 +246,7 @@ header .title h1 {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 3rem 0rem;
+	padding: 4rem 0rem;
 	background-color: var(--brown);
 }
 
@@ -448,6 +510,8 @@ header .title h1 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+	min-height: 120vh;
+	padding-bottom: 7.5rem;
 }
 
 .faq-title {
@@ -483,11 +547,19 @@ header .title h1 {
 	color: var(--apricot);
 }
 
-.faq-dietary-container {
-	display: flex;
+.faq-dietary-container,
+.faq-bookings-container,
+.faq-general-container {
+	display: none;
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 65vw;
+}
+
+.faq-dietary-container.active,
+.faq-bookings-container.active,
+.faq-general-container.active {
+	display: flex;
 }
 
 .faq-outer {
@@ -517,6 +589,7 @@ header .title h1 {
 .faq-number {
 	display: grid;
 	place-items: center;
+	padding: 1rem 2rem;
 	background-color: var(--peach);
 }
 
@@ -528,6 +601,7 @@ header .title h1 {
 
 .faq-inner:hover .faq-number {
 	background-color: var(--apricot);
+	transition: all 0.1s ease-in-out;
 }
 
 .faq-question {
@@ -545,22 +619,187 @@ header .title h1 {
 	font-family: 'Grotesk', sans-serif;
 }
 
-.faq-descriptionn {
-	display: block;
+.faq-description {
+	display: none;
 	padding: 2rem 3rem;
 }
 
-.faq-descriptionn span {
+.faq-description span {
 	font-size: 1rem;
 	line-height: 1.5rem;
 	color: var(--brown);
 	font-family: 'Grotesk', sans-serif;
 }
 
-.faq-description {
-	display: none;
+.faq-outer.active .faq-description {
+	display: block;
 }
 
-.hide {
-	display: none;
+/* Visit Styling */
+#visit-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 5rem;
+	background-color: var(--black);
+}
+
+#visit-container h2 {
+	font-size: 2.5rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+}
+
+.addresses {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	margin: 3rem 0rem;
+}
+
+.addresses > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.addresses h3 {
+	font-size: 2rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+	margin-bottom: 1.25rem;
+}
+
+.addresses span {
+	font-size: 1rem;
+	color: var(--cream);
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 0.5rem;
+}
+
+.reservations {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.reservations h3 {
+	font-size: 1rem;
+	color: var(--cream);
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1.25rem;
+}
+
+.reservations span {
+	font-size: 1rem;
+	color: var(--cream);
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 0.75rem;
+}
+
+/* Footer Styling */
+footer {
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 50vh;
+	padding: 0rem 2rem 2rem 2rem;
+	background-color: var(--orange);
+	z-index: -1;
+}
+
+footer a {
+	font-size: 0.75rem;
+	color: var(--cream);
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+
+footer span {
+	font-size: 0.75rem;
+	color: var(--cream);
+	font-family: 'Grotesk', sans-serif;
+}
+
+/* Menu Container */
+#menu-container {
+	position: absolute;
+	top: -110vh;
+	left: 0;
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--brown);
+	transition: all 750ms ease-in-out;
+	z-index: 2;
+}
+
+#menu-container.active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 750ms ease-in-out;
+}
+
+.inner-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 80vw;
+	height: 70vh;
+	border: 1px solid red;
+}
+
+.menu-title {
+
+}
+
+.menu-title h2 {
+	font-size: 3rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+}
+
+.menu-nav {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.menu-nav span {
+	font-size: 1.25rem;
+	color: var(--cream);
+	text-transform: uppercase;
+	font-family: 'Grotesk', sans-serif;
+}
+
+/* Links Underline Styling */
+.fade-underline {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fade-underline:after {
+  display: block;
+  content: '';
+  border-bottom: 1px solid var(--cream);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 100% 50%
+}
+
+.fade-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
 }
