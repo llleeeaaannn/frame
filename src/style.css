@@ -752,8 +752,8 @@ footer span {
 .inner-menu {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: 70vw;
-	border: 1px solid red;
+	width: 80vw;
+	/* border: 1px solid red; */
 }
 
 .menu-one,
@@ -763,7 +763,7 @@ footer span {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	margin-left: 3rem;
+	margin-left: 6rem;
 }
 
 .menu-one h3,
@@ -776,7 +776,7 @@ footer span {
 }
 
 .menu-one div,
-.menu-two div,
+.menu-two a,
 .menu-three div {
 	display: flex;
 	flex-direction: column;
@@ -785,30 +785,62 @@ footer span {
 }
 
 .menu-one div span,
-.menu-two div span,
 .menu-three div span {
 	color: var(--cream);
 	font-size: 2rem;
 	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1rem;
+	cursor: pointer;
 }
 
-.menu-two div {
-	margin-bottom: 3rem;
+.menu-one div span:hover,
+.menu-three div span:hover {
+	color: var(--orange);
 }
 
-.menu-two div h4 {
+.menu-two a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.menu-two a:first-of-type {
+	padding-bottom: 2rem;
+}
+
+.menu-two a:nth-of-type(2) {
+	padding-top: 1rem;
+}
+
+.menu-two a:hover h4 {
+	color: var(--orange);
+}
+
+.menu-two a:hover span {
+	color: var(--orange);
+}
+
+.menu-two a h4 {
 	color: var(--cream);
 	font-size: 2rem;
 	font-family: 'BattleLines', sans-serif;
 	margin-bottom: 0.25rem;
 }
 
-.menu-two div span {
+.menu-two a span {
 	color: var(--cream);
 	font-size: 1rem;
 	line-height: 1.25rem;
 	font-family: 'Grotesk', sans-serif;
 }
+
+.menu-one:has(div:hover) header h3,
+.menu-two:has(a:hover) header h3,
+.menu-three:has(div:hover) header h3 {
+	color: var(--orange);
+	transition: transform 250ms ease-in-out;
+}
+
+
 
 /* Links Underline Styling */
 .fade-underline {
@@ -820,7 +852,7 @@ footer span {
 .fade-underline:after {
   display: block;
   content: '';
-  border-bottom: 1px solid var(--cream);
+  border-bottom: 1px solid var(--orange);
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
   transform-origin: 100% 50%
