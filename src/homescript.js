@@ -15,9 +15,14 @@ export default class Home {
   }
 
   start() {
-    this.createImages();
-    this.faqListener();
-    this.faqOptionsListener();
+    // this.createImages();
+    // this.faqListener();
+    // this.faqOptionsListener();
+    // this.menu();
+  }
+
+  menu() {
+    this.menuLinksListener();
     this.menuToggleListener();
   }
 
@@ -88,6 +93,7 @@ export default class Home {
     });
   }
 
+  // Nav Menu Styling (same for all pages)
   menuToggleListener() {
     const menuBars = document.querySelectorAll('.menu-bar');
     const menuToggle = document.getElementById('menu-toggle');
@@ -95,6 +101,20 @@ export default class Home {
     menuToggle.addEventListener('click', () => {
       menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
       menuContainer.classList.toggle('menu-active');
+    });
+  }
+
+  menuLinksListener() {
+    const menu = document.getElementById('menu-links');
+    let links = menu.getElementsByTagName('a');
+    links = [...links]
+    const menuBars = document.querySelectorAll('.menu-bar');
+    const menuContainer = document.getElementById('menu-container');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
+        menuContainer.classList.toggle('menu-active');
+      })
     });
   }
 }

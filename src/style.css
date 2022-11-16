@@ -64,6 +64,7 @@ table {
 }
 
 html {
+	scroll-behavior: smooth;
   background-color: var(--cream);
 }
 
@@ -929,7 +930,22 @@ footer span {
 	justify-content: flex-start;
 	width: 100%;
 	padding: 5rem 15vw;
+	padding-bottom: 2rem;
 	background-color: var(--cream);
+}
+
+.jobs-brush {
+	position: relative;
+	width: 100%;
+}
+
+.jobs-brush svg {
+	position: absolute;
+	top: 2rem;
+	right: 3rem;
+	width: 40%;
+	color: var(--brown);
+	fill: var(--brown);
 }
 
 #jobs-container h2 {
@@ -948,21 +964,131 @@ footer span {
 	font-size: 1rem;
 	font-family: 'Grotesk', sans-serif;
 	margin-bottom: 0.5rem;
-	margin-left: 0.25rem;
+	margin-left: 0.1rem;
 }
 
 #jobs-form-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: flex-start;
 	justify-content: flex-start;
 	width: 100%;
-	padding: 5rem 10rem;
+	padding: 5rem 15vw;
+	padding-top: 0rem;
 	background-color: var(--cream);
 }
 
-#jobs-form-container > div {
+#jobs-form-container form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 90%;
+}
+
+#jobs-form-container form > div {
 	width: 100%;
+	margin-bottom: 1rem;
+}
+
+#jobs-form-container label {
+	font-size: 0.8rem;
+	color: var(--brown);
+	font-family: sans-serif;
+	padding-top: 0.25rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	cursor: pointer;
+}
+
+.form-details {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.form-details > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.form-details input {
+	font-size: 1rem;
+	color: var(--brown);
+	font-family: sans-serif;
+	width: 100%;
+	height: 2.5rem;
+	padding: 0.5rem;
+	border-radius: 0;
+	border: 1px solid var(--brown);
+	background-color: var(--cream);
+	cursor: text;
+}
+
+.form-details input:hover {
+	border: 2px solid var(--brown);
+}
+
+.form-details input:focus {
+	outline: none;
+	border: 2px solid var(--apricot);
+}
+
+.form-message {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.form-message textarea {
+	font-size: 1rem;
+	color: var(--brown);
+	font-family: sans-serif;
+	width: 100%;
+	min-height: 7.5rem;
+	padding: 0.5rem;
+	border-radius: 0;
+	border: 1px solid var(--brown);
+	background-color: var(--cream);
+	cursor: text;
+	resize: none;
+}
+
+.form-message textarea:hover {
+	border: 2px solid var(--brown);
+}
+
+.form-message textarea:focus {
+	outline: none;
+	border: 2px solid var(--apricot);
+}
+
+.form-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.form-button button {
+	font-size: 1rem;
+	color: var(--cream);
+	width: 10rem;
+	height: 2.5rem;
+	border-radius: 0;
+	border: 1px solid var(--apricot);
+	background-color: var(--apricot);
+	cursor: pointer;
+}
+
+.form-button button:hover {
+	color: var(--cream);
+	border: 1px solid var(--brown);
+	background-color: var(--brown);
+	transition: all 250ms ease-in-out;
 }
 
 /* Food Menu & Suppliers Page Styling */
@@ -1055,8 +1181,37 @@ footer span {
 	font-family: 'Bellatiez', sans-serif;
 }
 
+.food-menu-brush {
+	position: relative;
+	width: 100%;
+}
+
+.food-menu-brush svg {
+	position: absolute;
+	top: 0rem;
+	left: 3rem;
+	width: 40%;
+	color: var(--black);
+	fill: var(--black);
+	transform: rotate(180deg);
+}
+
+.inside-food-menu-brush {
+	position: relative;
+	width: 100%;
+}
+
+.inside-food-menu-brush svg {
+	position: absolute;
+	top: 0rem;
+	right: -1.5rem;
+	width: 90%;
+	color: var(--cream);
+	fill: var(--cream);
+}
+
 /* Suppliers Styling */
-#supplier-container {
+#suppliers {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1066,7 +1221,7 @@ footer span {
 	background-color: var(--cream);
 }
 
-#supplier-container .suppliers-header {
+#suppliers .suppliers-header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1075,7 +1230,7 @@ footer span {
 	margin-bottom: 3rem;
 }
 
-#supplier-container .suppliers-header h4 {
+#suppliers .suppliers-header h4 {
 	font-size: 2rem;
 	color: var(--brown);
 	text-align: center;
@@ -1083,7 +1238,7 @@ footer span {
 	margin-bottom: 2rem;
 }
 
-#supplier-container .suppliers-header span {
+#suppliers .suppliers-header span {
 	font-size: 1rem;
 	color: var(--brown);
 	text-align: center;
@@ -1092,7 +1247,7 @@ footer span {
 	margin-bottom: 1.5rem;
 }
 
-#supplier-container .suppliers-list {
+#suppliers .suppliers-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(9, 1fr);
@@ -1100,7 +1255,7 @@ footer span {
 	grid-row-gap: 2rem;
 }
 
-#supplier-container .supplier {
+#suppliers .supplier {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -1108,13 +1263,13 @@ footer span {
 	width: 30rem;
 }
 
-#supplier-container .supplier img {
+#suppliers .supplier img {
 	width: 20rem;
 	height: auto;
 	margin-bottom: 1rem;
 }
 
-#supplier-container .supplier-description {
+#suppliers .supplier-description {
 	font-size: 0.8rem;
 	color: var(--brown);
 	text-align: center;
@@ -1122,10 +1277,25 @@ footer span {
 	font-family: 'Grotesk', sans-serif;
 }
 
-#supplier-container .supplier-tag {
+#suppliers .supplier-tag {
 	font-size: 0.8rem;
 	color: var(--brown);
 	text-align: center;
 	font-family: 'Grotesk', sans-serif;
 	margin-top: 1rem;
+}
+
+.supplier-brush {
+	position: relative;
+	width: 100%;
+	margin-bottom: 5rem;
+}
+
+.supplier-brush svg {
+	position: absolute;
+	top: 0rem;
+	right: 3rem;
+	width: 40%;
+	color: var(--black);
+	fill: var(--black);
 }

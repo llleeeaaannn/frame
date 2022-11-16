@@ -10,10 +10,13 @@ export default class Menu {
   }
 
   start() {
-    this.createSuppliersImages();
-    // this.faqListener();
-    // this.faqOptionsListener();
-    // this.menuToggleListener();
+    // this.createSuppliersImages();
+    // this.menu();
+  }
+
+  menu() {
+    this.menuLinksListener();
+    this.menuToggleListener();
   }
 
   createSuppliersImages() {
@@ -28,46 +31,7 @@ export default class Menu {
     }
   }
 
-  faqListener() {
-    let faqs = document.getElementsByClassName('faq-outer');
-    faqs = [...faqs];
-    faqs.forEach((faq) => {
-      faq.addEventListener('click', () => {
-        if (faq.classList.contains('active')) {
-          faqs.forEach(element => element.classList.remove('active'));
-        } else {
-          faqs.forEach(element => element.classList.remove('active'));
-          faq.classList.add('active');
-        }
-      })
-    });
-  }
-
-  faqOptionsListener() {
-    const dietaryOption = document.getElementById('faq-dietary-option');
-    const bookingsOption = document.getElementById('faq-bookings-option');
-    const generalOption = document.getElementById('faq-general-option');
-    const dietaryQuestions = document.querySelector('.faq-dietary-container');
-    const bookingsQuestions = document.querySelector('.faq-bookings-container');
-    const generalQuestions = document.querySelector('.faq-general-container');
-    const allElements = [dietaryOption, bookingsOption, generalOption, dietaryQuestions, bookingsQuestions, generalQuestions];
-    dietaryOption.addEventListener('click', () => {
-      allElements.forEach(el => el.classList.remove('active'));
-      dietaryQuestions.classList.add('active');
-      dietaryOption.classList.add('active');
-    });
-    bookingsOption.addEventListener('click', () => {
-      allElements.forEach(el => el.classList.remove('active'));
-      bookingsQuestions.classList.add('active');
-      bookingsOption.classList.add('active');
-    });
-    generalOption.addEventListener('click', () => {
-      allElements.forEach(el => el.classList.remove('active'));
-      generalQuestions.classList.add('active');
-      generalOption.classList.add('active');
-    });
-  }
-
+  // Nav Menu Styling (same for all pages)
   menuToggleListener() {
     const menuBars = document.querySelectorAll('.menu-bar');
     const menuToggle = document.getElementById('menu-toggle');
@@ -75,6 +39,20 @@ export default class Menu {
     menuToggle.addEventListener('click', () => {
       menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
       menuContainer.classList.toggle('menu-active');
+    });
+  }
+
+  menuLinksListener() {
+    const menu = document.getElementById('menu-links');
+    let links = menu.getElementsByTagName('a');
+    links = [...links]
+    const menuBars = document.querySelectorAll('.menu-bar');
+    const menuContainer = document.getElementById('menu-container');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
+        menuContainer.classList.toggle('menu-active');
+      })
     });
   }
 }
