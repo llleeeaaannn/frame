@@ -83,7 +83,8 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
 	width: 100%;
-	height: 20vh;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
 }
 
 #header-container > div {
@@ -122,7 +123,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	height: 2rem;
-	margin-left: 3rem;
+	margin-left: 4rem;
 }
 
 .social-icons svg {
@@ -133,6 +134,14 @@ body {
 	cursor: pointer;
 }
 
+/* body:has(.menu-active) .social-icons {
+	z-index: 3;
+}
+
+body:has(.menu-active) .social-icons svg {
+	fill: var(--cream);
+} */
+
 /* Menu Icon Styling */
 #menu-toggle {
   display: flex;
@@ -140,7 +149,7 @@ body {
   justify-content: space-between;
   height: 1.9rem;
   width: 1.9rem;
-	margin-right: 3rem;
+	margin-right: 4rem;
 	cursor: pointer;
 	z-index: 3;
 }
@@ -287,7 +296,7 @@ body {
 	font-family: 'Grotesk', sans-serif;
 	padding: 0.75rem 1rem;
 	background-color: var(--cream);
-	cursor: pointer;
+	cursor: default;
 }
 
 .group-booking-button:hover {
@@ -480,15 +489,17 @@ body {
 	color: var(--apricot);
 	font-size: 7rem;
 	font-weight: 900;
+	text-align: center;
 	text-transform: uppercase;
 	font-family: sans-serif;
 	margin-top: 12rem;
 	margin-bottom: 6rem;
 }
 
-#hiring-container span {
+#hiring-container a {
 	color: var(--brown);
 	font-size: 1rem;
+	text-decoration: none;
 	font-family: 'Grotesk', sans-serif;
 	padding: 1rem 4rem;
 	margin-bottom: 10rem;
@@ -497,7 +508,7 @@ body {
 	cursor: pointer;
 }
 
-#hiring-container span:hover {
+#hiring-container a:hover {
 	color: var(--cream);
 	border: 0.1rem solid var(--brown);
 	background-color: var(--brown);
@@ -659,10 +670,11 @@ body {
 	margin: 3rem 0rem;
 }
 
-.addresses > div {
+.addresses > a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-decoration: none;
 }
 
 .addresses h3 {
@@ -677,6 +689,12 @@ body {
 	color: var(--cream);
 	font-family: 'Grotesk', sans-serif;
 	margin-bottom: 0.5rem;
+}
+
+.addresses a:hover h3,
+.addresses a:hover span {
+	color: var(--orange);
+	transition: all 200ms ease-in-out;
 }
 
 .reservations {
@@ -717,6 +735,7 @@ footer {
 footer a {
 	font-size: 0.75rem;
 	color: var(--cream);
+	text-decoration: none;
 	font-family: 'Grotesk', sans-serif;
 	margin-bottom: 1rem;
 	cursor: pointer;
@@ -742,7 +761,7 @@ footer span {
 	z-index: 2;
 }
 
-#menu-container.active {
+#menu-container.menu-active {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -753,7 +772,6 @@ footer span {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	width: 80vw;
-	/* border: 1px solid red; */
 }
 
 .menu-one,
@@ -763,7 +781,11 @@ footer span {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	margin-left: 6rem;
+	margin-left: 7vw;
+}
+
+.menu-three {
+	margin-right: 1rem;
 }
 
 .menu-one h3,
@@ -784,17 +806,18 @@ footer span {
 	align-items: flex-start;
 }
 
-.menu-one div span,
-.menu-three div span {
+.menu-one div a,
+.menu-three div a {
 	color: var(--cream);
 	font-size: 2rem;
+	text-decoration: none;
 	font-family: 'Grotesk', sans-serif;
 	margin-bottom: 1rem;
 	cursor: pointer;
 }
 
-.menu-one div span:hover,
-.menu-three div span:hover {
+.menu-one div a:hover,
+.menu-three div a:hover {
 	color: var(--orange);
 }
 
@@ -833,32 +856,276 @@ footer span {
 	font-family: 'Grotesk', sans-serif;
 }
 
-.menu-one:has(div:hover) header h3,
-.menu-two:has(a:hover) header h3,
-.menu-three:has(div:hover) header h3 {
-	color: var(--orange);
-	transition: transform 250ms ease-in-out;
+.menu-social-icons {
+	position: absolute;
+	left: 4rem;
+	bottom: 4rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	height: 2rem;
+	z-index: 3;
 }
 
+.menu-social-icons svg {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.75rem;
+	fill: var(--cream);
+	z-index: 3;
+	cursor: pointer;
+}
 
+.menu-social-icons svg:hover {
+	fill: var(--orange);
+}
+
+.menu-title {
+	position: absolute;
+	left: 4rem;
+	top: 3.75rem;
+	z-index: 3;
+}
+
+.menu-title h2 {
+	font-size: 2.5rem;
+	color: var(--cream);
+	font-family: 'BattleLines', sans-serif;
+	cursor: pointer;
+}
 
 /* Links Underline Styling */
-.fade-underline {
+.menu-one header h3,
+.menu-two header h3,
+.menu-three header h3 {
   position: relative;
   text-decoration: none;
   display: inline-block;
 }
 
-.fade-underline:after {
+.menu-one header h3:after,
+.menu-two header h3:after,
+.menu-three header h3:after {
   display: block;
   content: '';
-  border-bottom: 1px solid var(--orange);
+  border-bottom: 1.5px solid var(--cream);
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-  transform-origin: 100% 50%
+  transition: transform 350ms ease-in-out;
+  transform-origin: 100% 50%;
 }
 
-.fade-underline:hover:after {
+.menu-one:has(div:hover) header h3:after,
+.menu-two:has(a:hover) header h3:after,
+.menu-three:has(div:hover) header h3:after {
   transform: scaleX(1);
   transform-origin: 0 50%;
+}
+
+/* Jobs Page Styling */
+/* Jobs Container Styling */
+#jobs-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 5rem 15vw;
+	background-color: var(--cream);
+}
+
+#jobs-container h2 {
+	color: var(--apricot);
+	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-family: 'QuanTu', sans-serif;
+	margin-bottom: 1rem;
+}
+
+#jobs-container span {
+	color: var(--brown);
+	font-size: 1rem;
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 0.5rem;
+	margin-left: 0.25rem;
+}
+
+#jobs-form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 5rem 10rem;
+	background-color: var(--cream);
+}
+
+#jobs-form-container > div {
+	width: 100%;
+}
+
+/* Food Menu & Suppliers Page Styling */
+/* Food Menu Styling */
+#food-menu-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	padding: 5rem;
+	background-color: var(--cream);
+}
+
+.food-menu-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 50%;
+	margin-bottom: 5rem;
+}
+
+.food-menu-header h3 {
+	font-size: 2rem;
+	color: var(--brown);
+	text-align: center;
+	font-family: 'BattleLines', sans-serif;
+	margin-bottom: 2rem;
+}
+
+.food-menu-header span {
+	font-size: 1rem;
+	color: var(--brown);
+	text-align: center;
+	line-height: 1.25rem;
+	font-family: 'Grotesk', sans-serif;
+}
+
+.food-menu {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 3rem;
+	width: 75%;
+	padding: 3rem;
+	background-color: var(--brown);
+}
+
+.food-menu-left,
+.food-menu-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.food-menu-right {
+	justify-content: space-between;
+}
+
+.food-menu-left > div,
+.food-menu-right > div {
+	margin-bottom: 2rem;
+}
+
+.food-menu-left :last-child,
+.food-menu-right :last-child {
+	margin-bottom: 0rem;
+}
+
+.food-menu h4 {
+	font-size: 2rem;
+	color: var(--cream);
+	margin-bottom: 1rem;
+	font-family: 'BattleLines', sans-serif;
+}
+
+.food-menu-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.food-menu span {
+	font-size: 1rem;
+	color: var(--cream);
+	line-height: 1.4rem;
+	letter-spacing: 1px;
+	font-family: 'Bellatiez', sans-serif;
+}
+
+/* Suppliers Styling */
+#supplier-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 5rem 3rem;
+	background-color: var(--cream);
+}
+
+#supplier-container .suppliers-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0rem calc(25vw - 5rem);
+	margin-bottom: 3rem;
+}
+
+#supplier-container .suppliers-header h4 {
+	font-size: 2rem;
+	color: var(--brown);
+	text-align: center;
+	font-family: 'BattleLines', sans-serif;
+	margin-bottom: 2rem;
+}
+
+#supplier-container .suppliers-header span {
+	font-size: 1rem;
+	color: var(--brown);
+	text-align: center;
+	line-height: 1.4rem;
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1.5rem;
+}
+
+#supplier-container .suppliers-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(9, 1fr);
+	grid-column-gap: 5rem;
+	grid-row-gap: 2rem;
+}
+
+#supplier-container .supplier {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 30rem;
+}
+
+#supplier-container .supplier img {
+	width: 20rem;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+#supplier-container .supplier-description {
+	font-size: 0.8rem;
+	color: var(--brown);
+	text-align: center;
+	line-height: 1.1rem;
+	font-family: 'Grotesk', sans-serif;
+}
+
+#supplier-container .supplier-tag {
+	font-size: 0.8rem;
+	color: var(--brown);
+	text-align: center;
+	font-family: 'Grotesk', sans-serif;
+	margin-top: 1rem;
 }

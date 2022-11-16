@@ -4,24 +4,36 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    script: './src/script.js'
-  },
-  devtool: 'inline-source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    }),
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
+    index: './src/index.js',
+    menu: './src/menu.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  mode: 'none',
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'jobs.html',
+      template: 'src/jobs.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'menu.html',
+      template: 'src/menu.html',
+      chunks: ['menu']
+    }),
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  mode: 'development',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {

@@ -25,6 +25,15 @@
   font-display: swap;
 }
 
+/* Bellatiez (for menu) */
+@font-face {
+  font-family: 'Bellatiez';
+  src: url('./fonts/BellatiezCaps-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* GT ULTRA FONT */
 /* Ultra */
 @font-face {
