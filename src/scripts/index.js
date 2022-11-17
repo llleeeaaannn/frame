@@ -1,11 +1,10 @@
-import './style.css';
-import { slogans } from './variables';
-import WineImg from './images/sprezzatura-wine.jpg';
-import BreadImg from './images/sprezzatura-bread.jpg';
-import PastaImg from './images/sprezzatura-pasta.jpg';
-import OlivesImg from './images/sprezzatura-olives.jpg';
-import RedPastaImg from './images/sprezzatura-red-pasta.jpg';
-import ItalianImg from './images/sprezzatura-suppliers.jpg';
+import '../style.css';
+import WineImg from '../images/sprezzatura-wine.jpg';
+import BreadImg from '../images/sprezzatura-bread.jpg';
+import PastaImg from '../images/sprezzatura-pasta.jpg';
+import OlivesImg from '../images/sprezzatura-olives.jpg';
+import RedPastaImg from '../images/sprezzatura-red-pasta.jpg';
+import ItalianImg from '../images/sprezzatura-suppliers.jpg';
 
 
 export default class Home {
@@ -118,3 +117,9 @@ export default class Home {
     });
   }
 }
+
+
+const home = new Home();
+home.start();
+
+console.log('Home');

@@ -14,11 +14,15 @@
 
 /*! -!../node_modules/css-loader/dist/cjs.js!./fonts.css */
 
+/*! ../images/sprezzatura-wine.jpg */
+
 /*! ../node_modules/css-loader/dist/runtime/api.js */
 
 /*! ../node_modules/css-loader/dist/runtime/getUrl.js */
 
 /*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../style.css */
 
 /*! ./fonts/AlteHaasGrotesk_Bold.woff */
 
@@ -96,29 +100,13 @@
 
 /*! ./fonts/VI-QuanTu.woff */
 
-/*! ./images/sprezzatura-wine.jpg */
-
-/*! ./menuscript.js */
-
-/*! ./style.css */
-
-/*! ./variables */
-
-/*!*********************!*\
-  !*** ./src/menu.js ***!
-  \*********************/
-
 /*!***********************!*\
   !*** ./src/style.css ***!
   \***********************/
 
-/*!**************************!*\
-  !*** ./src/variables.js ***!
-  \**************************/
-
-/*!***************************!*\
-  !*** ./src/menuscript.js ***!
-  \***************************/
+/*!*****************************!*\
+  !*** ./src/scripts/menu.js ***!
+  \*****************************/
 
 /*!**********************************!*\
   !*** ./src/fonts/VI-QuanTu.woff ***!

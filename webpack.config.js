@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    menu: './src/menu.js',
-    privacy: './src/privacy.js',
+    index: './src/scripts/index.js',
+    menu: './src/scripts/menu.js',
+    privacy: './src/scripts/privacy.js',
+    hometree: './src/scripts/hometree.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -32,6 +33,11 @@ module.exports = {
       filename: 'privacy.html',
       template: 'src/privacy.html',
       chunks: ['privacy']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'hometree.html',
+      template: 'src/hometree.html',
+      chunks: ['hometree']
     }),
   ],
   optimization: {

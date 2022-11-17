@@ -1,34 +1,18 @@
-import './style.css';
-import { slogans } from './variables';
-import WineImg from './images/sprezzatura-wine.jpg';
+import '../style.css';
 
-
-export default class Menu {
+export default class Privacy {
 
   constructor() {
     this.value = 'HECK';
   }
 
   start() {
-    this.createSuppliersImages();
     this.menu();
   }
 
   menu() {
     this.menuLinksListener();
     this.menuToggleListener();
-  }
-
-  createSuppliersImages() {
-    let nodes = {}
-    for (let i = 1; i < 19; i++) {
-      let name = `supplier-image-${i}`
-      // nodes[name] = document.getElementById(name);
-      let node = document.getElementById(name);
-      let supplierImage = new Image();
-      supplierImage.src = WineImg;
-      node.append(supplierImage)
-    }
   }
 
   // Nav Menu Styling (same for all pages)
@@ -56,3 +40,8 @@ export default class Menu {
     });
   }
 }
+
+const privacy = new Privacy();
+privacy.start();
+
+console.log('Privacy');
