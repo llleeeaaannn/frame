@@ -725,15 +725,31 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	width: 100%;
-	padding-top: 20rem;
-	padding-bottom: 2rem;
+	padding: 2rem;
+	padding-top: 7.5rem;
 	background-color: var(--orange);
 	z-index: -1;
 }
 
-footer > div {
-	display: grid;
-	place-items: center;
+footer :nth-child(1) {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+footer :nth-child(2) {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+footer :nth-child(3) {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .footer-social-icons {
@@ -1313,4 +1329,77 @@ footer a {
 	width: 40%;
 	color: var(--black);
 	fill: var(--black);
+}
+
+/* Privacy Page */
+/* Privacy Container Styling */
+#privacy-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-top: 3rem;
+	padding-bottom: 3rem;
+	background-color: var(--cream);
+}
+
+.privacy-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 3rem;
+}
+
+.privacy-header h2 {
+	font-size: 4rem;
+	color: var(--brown);
+	text-align: center;
+	font-family: 'BattleLines', sans-serif;
+}
+
+.privacy-brush-one,
+.privacy-brush-two {
+	width: 30%;
+}
+
+.privacy-brush-one svg,
+.privacy-brush-two svg {
+	color: var(--brown);
+	fill: var(--brown);
+}
+
+.privacy-brush-one svg {
+	transform: rotate(180deg);
+}
+
+.privacy-content {
+	display: flex;
+	flex-direction: column;
+	width: 50rem;
+}
+
+.privacy-content h5 {
+	font-size: 1rem;
+	color: var(--brown);
+	line-height: 1.25rem;
+	text-decoration: underline;
+	font-family: 'Grotesk', sans-serif;
+}
+
+.privacy-content span {
+	font-size: 1rem;
+	color: var(--brown);
+	line-height: 1.25rem;
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1.5rem;
+}
+
+.privacy-content p {
+	font-size: 1rem;
+	color: var(--brown);
+	line-height: 1.25rem;
+	font-family: 'Grotesk', sans-serif;
 }

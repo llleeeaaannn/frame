@@ -10,8 +10,8 @@ export default class Menu {
   }
 
   start() {
-    // this.createSuppliersImages();
-    // this.menu();
+    this.createSuppliersImages();
+    this.menu();
   }
 
   menu() {

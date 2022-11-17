@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     menu: './src/menu.js',
+    privacy: './src/privacy.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -26,6 +27,11 @@ module.exports = {
       filename: 'menu.html',
       template: 'src/menu.html',
       chunks: ['menu']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'privacy.html',
+      template: 'src/privacy.html',
+      chunks: ['privacy']
     }),
   ],
   optimization: {

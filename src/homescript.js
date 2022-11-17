@@ -15,10 +15,10 @@ export default class Home {
   }
 
   start() {
-    // this.createImages();
-    // this.faqListener();
-    // this.faqOptionsListener();
-    // this.menu();
+    this.createImages();
+    this.faqListener();
+    this.faqOptionsListener();
+    this.menu();
   }
 
   menu() {
