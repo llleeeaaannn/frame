@@ -14,15 +14,21 @@ export default class Home {
   }
 
   start() {
-    this.createImages();
-    this.faqListener();
-    this.faqOptionsListener();
     this.menu();
+    this.listeners();
+    this.createImages();
   }
 
   menu() {
     this.menuLinksListener();
     this.menuToggleListener();
+  }
+
+  listeners() {
+    this.faqListener();
+    this.titleListener();
+    this.menuTitleListener();
+    this.faqOptionsListener();
   }
 
   createImages() {
@@ -65,6 +71,24 @@ export default class Home {
         }
       })
     });
+  }
+
+  titleListener() {
+    const title = document.getElementById('home-title');
+    title.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+    })
+  }
+
+  menuTitleListener() {
+    const title = document.getElementById('home-menu-title');
+    const menuBars = document.querySelectorAll('.menu-bar');
+    const menuContainer = document.getElementById('menu-container');
+    title.addEventListener('click', () => {
+      menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
+      menuContainer.classList.toggle('menu-active');
+      window.scrollTo(0, 0);
+    })
   }
 
   faqOptionsListener() {

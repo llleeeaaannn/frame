@@ -112,6 +112,14 @@ body {
 	font-family: 'BattleLines', sans-serif;
 }
 
+#header-container .title a {
+	text-decoration: none;
+}
+
+#home-title {
+	cursor: pointer;
+}
+
 /* Social Icons Styling */
 .social-icon-container {
 	display: flex;
@@ -926,6 +934,10 @@ footer a {
 	cursor: pointer;
 }
 
+.menu-title a {
+	text-decoration: none;
+}
+
 /* Links Underline Styling */
 .menu-one header h3,
 .menu-two header h3,
@@ -940,7 +952,7 @@ footer a {
 .menu-three header h3:after {
   display: block;
   content: '';
-  border-bottom: 1.5px solid var(--cream);
+  border-bottom: 1px solid var(--cream);
   transform: scaleX(0);
   transition: transform 350ms ease-in-out;
   transform-origin: 100% 50%;
@@ -1525,4 +1537,91 @@ footer a {
 	background-color: var(--orange);
 	border: 0.25rem solid var(--orange);
 	transition: all 0.25s ease-in-out;
+}
+
+/* Partnerships Page Styling */
+/* Partnerships Container */
+#partnerships-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+	background-color: var(--cream);
+}
+
+.partnerships-header {
+	display: grid;
+	place-items: center;
+	margin-bottom: 2rem;
+}
+
+.partnerships-header h3 {
+	font-size: 3rem;
+	color: var(--brown);
+	font-family: 'BattleLines', sans-serif;
+}
+
+.partnerships-brush {
+	position: relative;
+	width: 100%;
+}
+
+.partnerships-brush svg {
+	width: 35%;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	color: var(--brown);
+	fill: var(--brown);
+	transform: rotate(180deg);
+}
+
+.partnership-simon,
+.partnership-hometree {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	min-width: 30rem;
+	max-width: 50rem;
+	padding: 1rem;
+}
+
+.partnership-simon h4,
+.partnership-hometree h4 {
+	font-size: 1.5rem;
+	color: var(--brown);
+	line-height: 2.25rem;
+	font-family: 'Grotesk', sans-serif;
+}
+
+.partnership-simon span,
+.partnership-hometree span {
+	font-size: 1rem;
+	color: var(--brown);
+	line-height: 1.5rem;
+	font-family: 'Grotesk', sans-serif;
+	margin-bottom: 1rem;
+}
+
+.partnership-simon a,
+.partnership-hometree a {
+	font-size: 1rem;
+	color: var(--brown);
+	line-height: 1.5rem;
+	text-decoration: underline;
+	font-family: 'Grotesk', sans-serif;
+}
+
+.partnership-simon img {
+	align-self: center;
+	width: 20rem;
+	height: auto;
+}
+
+.partnership-hometree img {
+	align-self: center;
+	width: 15rem;
+	height: auto;
+	margin-top: 1rem;
 }

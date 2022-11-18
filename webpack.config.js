@@ -6,8 +6,10 @@ module.exports = {
   entry: {
     index: './src/scripts/index.js',
     menu: './src/scripts/menu.js',
+    jobs: './src/scripts/jobs.js',
     privacy: './src/scripts/privacy.js',
     hometree: './src/scripts/hometree.js',
+    partnerships: './src/scripts/partnerships.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -22,7 +24,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'jobs.html',
-      template: 'src/jobs.html'
+      template: 'src/jobs.html',
+      chunks: ['jobs']
     }),
     new HtmlWebpackPlugin({
       filename: 'menu.html',
@@ -38,6 +41,11 @@ module.exports = {
       filename: 'hometree.html',
       template: 'src/hometree.html',
       chunks: ['hometree']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'partnerships.html',
+      template: 'src/partnerships.html',
+      chunks: ['partnerships']
     }),
   ],
   optimization: {
