@@ -27,7 +27,6 @@ export default class Home {
   listeners() {
     this.faqListener();
     this.titleListener();
-    this.menuTitleListener();
     this.faqOptionsListener();
   }
 
@@ -87,7 +86,6 @@ export default class Home {
     title.addEventListener('click', () => {
       menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
       menuContainer.classList.toggle('menu-active');
-      window.scrollTo(0, 0);
     })
   }
 
