@@ -60,7 +60,6 @@ table {
 /* General Styling */
 * {
 	box-sizing: border-box;
-	color: var(--yellow1)
 }
 
 html {
@@ -142,14 +141,6 @@ body {
 	fill: var(--brown);
 	cursor: pointer;
 }
-
-/* body:has(.menu-active) .social-icons {
-	z-index: 3;
-}
-
-body:has(.menu-active) .social-icons svg {
-	fill: var(--cream);
-} */
 
 /* Menu Icon Styling */
 #menu-toggle {
@@ -347,6 +338,7 @@ body:has(.menu-active) .social-icons svg {
 	align-items: center;
 	color: var(--black);
 	font-size: 5rem;
+	text-align: center;
 	font-family: 'BattleLines', sans-serif;
 }
 
@@ -1626,8 +1618,54 @@ footer a {
 	margin-top: 1rem;
 }
 
+/* Media Query for Mobile Devices below 480px in width */
+@media (max-device-width:480px) {
 
-/*
-Jobs form validation
-Mobile Styling
- */
+  /* Header Styling */
+  #header-container {
+		position: relative;
+    display: flex;
+    align-items: center;
+		justify-content: center;
+  	width: 100%;
+  	padding-top: 2.5rem;
+  	padding-bottom: 2.5rem;
+  }
+
+	#header-container > div {
+		height: auto;
+	}
+
+  .social-icon-container {
+  	display: none;
+  }
+
+	.menu-icon-container {
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+	}
+
+	#menu-toggle {
+		height: 4rem;
+	  width: 4rem;
+		margin-right: 0;
+	}
+
+	#menu-toggle .menu-bar {
+	  height: 8px;
+	  width: 100%;
+	}
+
+	#menu-toggle .menu-selected:nth-of-type(1) {
+	  width: 5.05rem;
+	}
+
+	#menu-toggle .menu-selected:nth-of-type(3) {
+	  width: 5.05rem;
+	}
+
+
+
+
+}
